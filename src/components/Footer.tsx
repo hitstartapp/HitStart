@@ -13,7 +13,7 @@ export default function Footer() {
 
             <div className="relative z-10 px-[20px] pb-[30px] md:px-[40px]">
                 <motion.div
-                    className="flex flex-col md:flex-row justify-between px-[50px] mb-[120px] font-mono text-[10px] leading-[1.6] text-[#ccc] gap-[20px] md:gap-0"
+                    className="flex flex-col md:flex-row justify-between mb-[120px] font-mono text-[10px] leading-[1.6] text-[#ccc] gap-[20px] md:gap-0"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
