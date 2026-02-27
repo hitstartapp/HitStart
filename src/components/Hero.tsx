@@ -27,9 +27,9 @@ export default function Hero() {
                     Your health, your<br />fitness, your life.
                 </motion.h1>
             </div>
-            <div className="absolute bottom-[40px] md:bottom-[80px] z-10 w-full px-4 flex justify-center">
+            <div className="absolute bottom-[40px] z-10 w-full px-4 flex justify-center">
                 <motion.div
-                    className="flex w-full md:w-1/2 bg-[#1e1e1e]/60 backdrop-blur-md rounded-[20px] md:rounded-[50px] p-[15px] md:p-[20px] justify-center items-center"
+                    className="flex w-full md:w-1/2 bg-[#1e1e1e]/60 backdrop-blur-md rounded-[50px] p-[15px] md:p-[20px] justify-center items-center"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
@@ -40,7 +40,7 @@ export default function Hero() {
                             e.preventDefault();
                             document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="flex w-full gap-3 items-center justify-center h-[44px] md:h-[54px] rounded-[15px] md:rounded-[25px] text-[14px] md:text-[18px] font-semibold uppercase tracking-[0.05em] bg-primary text-white transition-transform hover:-translate-y-0.5 hover:opacity-90"
+                        className="flex w-full gap-3 items-center justify-center h-[48px] md:h-[60px] rounded-[50px] text-[14px] md:text-[18px] font-semibold uppercase tracking-[0.05em] bg-primary text-white transition-transform hover:-translate-y-0.5 hover:opacity-90"
                     >
                         Start Training
                         <IoFootsteps size={28} />

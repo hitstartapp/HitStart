@@ -59,7 +59,7 @@ const missionCards = [
 
 export default function Mission() {
     return (
-        <section className="bg-primary px-[30px] py-[100px] text-center min-h-[80vh] flex flex-col justify-center items-center gap-[100px]">
+        <section className="bg-primary px-[30px] py-[60px] md:py-[200px] text-center min-h-[80vh] flex flex-col justify-center items-center gap-[10px] md:gap-[100px]">
             <motion.p
                 className="text-[1.4rem] md:text-[3.1rem] font-semibold leading-[1.15] tracking-[-0.03em] text-white max-w-[1400px] mx-auto mb-[60px]"
                 initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ export default function Mission() {
             </motion.p>
 
             <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1200px] w-full mx-auto"
+                className="flex flex-col md:flex-row gap-6 md:gap-0 md:-space-x-8 max-w-[1200px] w-full mx-auto"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -82,24 +82,34 @@ export default function Mission() {
                 {missionCards.map((card, index) => (
                     <motion.div
                         key={index}
-                        className="bg-gradient-to-b from-blue-800/40 to-blue-900/60 backdrop-blur-md border border-white/10 p-8 rounded-[32px] shadow-2xl flex flex-col items-start justify-start text-left min-h-[350px] hover:scale-[1.02] hover:bg-white/10 transition-all duration-300 relative overflow-hidden"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                        className={`flex flex-1 group ${index === 0 ? "z-10" : index === 1 ? "z-20" : "z-30"
+                            } hover:!z-50`}
+                        initial={{ opacity: 0, y: 50, rotate: index === 0 ? 1 : index === 1 ? 0 : 1 }}
+                        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.8, delay: 0.2 + index * 0.15, type: "spring", bounce: 0.4 }}
                     >
-                        {/* Soft light effect behind cards */}
-                        <div className="absolute top-0 left-0 w-full h-1/2 bg-white/[0.03] rounded-t-full blur-3xl pointer-events-none"></div>
+                        <div
+                            className={`w-full bg-gradient-to-b from-blue-800/40 to-blue-900/60 backdrop-blur-md border border-white/10 p-8 rounded-[32px] shadow-2xl flex flex-col items-start justify-start text-left min-h-[350px] transition-all duration-500 relative overflow-hidden ${index === 0
+                                ? "md:rotate-[2deg] md:translate-y-4 md:translate-x-2"
+                                : index === 1
+                                    ? "md:rotate-[-2deg] md:translate-y-4 md:translate-x-2"
+                                    : "md:rotate-[2deg] md:translate-y-4 md:translate-x-2"
+                                } md:group-hover:rotate-0 md:group-hover:translate-y-0 md:group-hover:translate-x-0 md:group-hover:scale-[1.05]`}
+                        >
+                            {/* Soft light effect behind cards */}
+                            <div className="absolute top-0 left-0 w-full h-1/2 bg-white/[0.03] rounded-t-full blur-3xl pointer-events-none"></div>
 
-                        {card.icons}
+                            {card.icons}
 
-                        <div className="mt-auto flex flex-col gap-[10px]">
-                            <h3 className="text-3xl font-bold text-white/80 mb-2">
-                                {card.title}
-                            </h3>
-                            <p className="text-[1.2rem] leading-[1.4] text-white/40 whitespace-pre-line tracking-tight">
-                                {card.description}
-                            </p>
+                            <div className="mt-auto flex flex-col gap-[10px]">
+                                <h3 className="text-3xl font-bold text-white/80 mb-2">
+                                    {card.title}
+                                </h3>
+                                <p className="text-[1.2rem] leading-[1.4] text-white/40 whitespace-pre-line tracking-tight">
+                                    {card.description}
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
                 ))}

@@ -62,13 +62,13 @@ export default function Footer() {
                 </motion.div>
 
                 <motion.h1
-                    className="text-[14vw] md:text-[9vw] leading-[0.85] tracking-[-0.05em] m-0 text-white whitespace-nowrap mt-[20px] md:mt-0"
+                    className="text-[12vw] md:text-[9vw] leading-[0.85] tracking-[-0.05em] m-0 text-white break-words md:whitespace-nowrap mt-[20px] md:mt-0"
                     initial={{ opacity: 0, scale: 0.9, y: 50 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 >
-                    Transforming health.
+                    Transforming <br className="md:hidden" /> health.
                 </motion.h1>
             </div>
         </footer>

@@ -15,7 +15,7 @@ export default function CTA() {
     return (
         <section
             id="cta"
-            className="relative h-[800px] bg-cover bg-[center_70%] flex items-center justify-center font-sans"
+            className="relative h-[600px] md:h-[800px] bg-cover bg-[center_70%] flex items-center justify-center font-sans"
             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521805103424-d8f8430e8933?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
         >
             <motion.div
@@ -23,21 +23,21 @@ export default function CTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="bg-[#1e1e1e]/40 backdrop-blur-xl border border-white/10 w-[90%] md:w-[80%] max-w-[1000px] rounded-[30px] md:rounded-[40px] py-[80px] md:py-[120px] px-5 text-center shadow-2xl relative"
+                className="bg-[#1e1e1e]/40 backdrop-blur-xl border border-white/10 w-[90%] md:w-[60%] max-w-[1000px] rounded-[30px] md:rounded-[40px] py-[40px] md:py-[100px] px-5 text-center shadow-2xl relative"
             >
-                <h2 className="text-[3.2rem] mb-3">Ready to transform?</h2>
-                <p className="text-[16px] font-normal mb-[30px] text-[#e0e0e0]">
+                <h2 className="text-[2.4rem] md:text-[3.2rem] mb-2">Ready to transform?</h2>
+                <p className="text-[16px] font-normal text-gray-400">
                     Download HitStart now and start your fitness journey now.
                 </p>
-                <div className="flex gap-[20px] justify-center flex-col items-center mt-20 relative">
-                    <a href="#" onClick={handleDownloadClick} className="flex items-center justify-center gap-[16px] w-[400px] h-[55px] rounded-[50px] bg-primary text-white transition-transform hover:-translate-y-0.5 hover:opacity-90">
+                <div className="flex gap-[10px] md:gap-[20px] justify-center flex-col items-center mt-10 md:mt-20 relative">
+                    <a href="#" onClick={handleDownloadClick} className="flex items-center justify-center gap-[16px] w-[280px] md:w-[400px] h-[48px] md:h-[60px] rounded-[50px] bg-primary text-white transition-transform hover:-translate-y-0.5 hover:opacity-90">
                         <IoLogoApple size={30} />
                         <div className="flex flex-col items-start translate-y-[2px]">
                             <span className="text-[9px] font-medium leading-none tracking-wide uppercase mb-1">Download on the</span>
                             <span className="text-[18px] font-semibold leading-none tracking-tight">App Store</span>
                         </div>
                     </a>
-                    <a href="#" onClick={handleDownloadClick} className="flex items-center justify-center gap-[16px] w-[400px] h-[55px] rounded-[50px] bg-primary text-white transition-transform hover:-translate-y-0.5 hover:opacity-90">
+                    <a href="#" onClick={handleDownloadClick} className="flex items-center justify-center gap-[16px] w-[280px] md:w-[400px] h-[48px] md:h-[60px] rounded-[50px] bg-primary text-white transition-transform hover:-translate-y-0.5 hover:opacity-90">
                         <IoLogoGooglePlaystore size={26} />
                         <div className="flex flex-col items-start translate-y-[2px]">
                             <span className="text-[9px] font-medium leading-none tracking-wide uppercase mb-1">Get it on</span>
